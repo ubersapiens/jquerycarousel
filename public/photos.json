@@ -1,0 +1,37 @@
+{"photos": [
+		{
+				"title": "Lac Leman 1",
+				"src": "/images/lacleman1.jpg",
+				"width": 500,
+				"height": 500,
+				"caption": "A beautiful picture of the lake."
+		},
+		{ 
+				"title": "Lac Leman 2",
+				"src": "/images/lacleman2.jpg",
+				"width": 500,
+				"height": 500,
+				"caption": "Another beautiful picture of the lake."
+		},
+		{ 
+				"title": "Lac Leman 3",
+				"src": "/images/lacleman3.jpg",
+				"width": 500,
+				"height": 500,
+				"caption": "Another anohter beautiful picture of the lake."
+		},
+		{ 
+				"title": "Lac Leman 4",
+				"src": "/images/lacleman1.jpg",
+				"width": 500,
+				"height": 500,
+				"caption": "Another another another beautiful picture of the lake."
+		},
+		{
+				"title": "Lac Leman 5",
+				"src": "/images/lacleman5.jpg",
+				"width": 500,
+				"height": 500,
+				"caption": "Another another another another beautiful picture of the lake."
+		}
+]}
