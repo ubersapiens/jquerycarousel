@@ -24,6 +24,7 @@
 			success: function(response){
 				instance.photos = response.photos;
 				instance.show_photos();
+				instance.arrows();
 				setInterval(function(){
 					instance.advance.apply(instance);
 				}, 3000);
@@ -51,6 +52,10 @@
 		this.next_photos();
 		this.show_photos();
 	};	
+	
+	JuanCarousel.prototype.arrows = function() {
+		console.log('cookies');
+	};
 })();
 
 
