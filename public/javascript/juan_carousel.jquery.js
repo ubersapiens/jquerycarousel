@@ -25,9 +25,9 @@
 				instance.show_photos();
 				instance.carousel_prev();
 				instance.carousel_next();
-				// setInterval(function(){
-				// 	instance.advance.apply(instance);
-				// }, 3000);
+				setInterval(function(){
+					instance.advance.apply(instance);
+				}, 3000);
 			}
 		});
 	}; 
