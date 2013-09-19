@@ -1,7 +1,7 @@
 (function(){
 
 	$.fn.juanCarousel = function(options){
-		
+
 		//The method .each needs to be placed into the function to maintain chainability
 		return this.each(function(){  
 			new JuanCarousel(this, options);  
@@ -15,7 +15,7 @@
 		this.setup();
 		this.load_photos();
 	};
-	
+
 	JuanCarousel.prototype.setup = function(){
 		this.element.append('<div class="image_container"></div>');
 		this.element.append('<div class="text_container"></div>');
@@ -57,19 +57,19 @@
 			}
 		});
 	}; 
-	
+
 	JuanCarousel.prototype.show_photos = function() {	
 		this.element.find('.image_container').html('<img src="' + this.photos[this.current_index].src + '" />');
 		this.element.find('.text_container').html('<p>' + this.photos[this.current_index].caption + ' </p>');
 	};
-	
+
 	JuanCarousel.prototype.next_photos = function(){
 		this.current_index = this.current_index + 1;
 		if (this.current_index > (this.photos.length -1)) {
 			this.current_index = 0;
 		}
 	};
-	
+
 	JuanCarousel.prototype.last_photos = function() {
 		this.current_index = this.current_index + 1;
 		if (this.current_index > (this.photos.length +1)) {
@@ -81,11 +81,11 @@
 		this.next_photos();
 		this.show_photos();
 	};	
-	
+
 	JuanCarousel.prototype.rewind = function() {
 		this.last_photos();
 		this.show_photos();
 	};
-	
-	
+
+
 })();
