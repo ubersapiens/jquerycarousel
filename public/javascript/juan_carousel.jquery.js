@@ -38,27 +38,43 @@
 				instance.next_photos();
 				instance.last_photos();
 				instance.show_photos();
-				$('#forward_button').click(function() {
-					instance.advance();
-				});
-				$('#back_button').click(function() {
-					instance.rewind();
-				});
-				var interval = setInterval(function(){
-					instance.advance.apply(instance);
-				}, 3000);
-				$('#pause_button').click(function () {
-					clearInterval(interval);
-				})
-				// $('#play_button').click(function () {
-				// 	console.log(this);
-				// 	setInterval(3000);
-				// })
+				instance.play();
+				instance.controls();				
 			}
 		});
+	};
+	
+	//Controls holds the next, prev, play, stop events
+	JuanCarousel.prototype.controls = function() {
+		var instance = this;
+		
+		$('#forward_button').click(function() {
+				instance.advance();
+		})
+		$('#back_button').click(function() {
+			instance.rewind();
+		})
+		$('#pause_button').click(function () {
+			clearInterval(instance.interval);
+		})
+		$('#play_button').click(function() {
+			instance.play();
+		})
+	};
+	
+	//setInterval event is assigned to the interval variable for further use
+	JuanCarousel.prototype.play = function() { 
+		var instance = this;
+			
+	 	instance.interval = setInterval(function(){
+	 		instance.advance.apply(instance);
+	 	}, 3000);	
 	}; 
-
+	
+	//Injects the JSON photos object into the two containers
 	JuanCarousel.prototype.show_photos = function() {	
+		var instance = this;
+		
 		this.element.find('.image_container').html('<img src="' + this.photos[this.current_index].src + '" />');
 		this.element.find('.text_container').html('<p>' + this.photos[this.current_index].caption + ' </p>');
 	};
